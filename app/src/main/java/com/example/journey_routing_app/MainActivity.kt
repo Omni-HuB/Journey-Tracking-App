@@ -1,28 +1,14 @@
-//package com.example.journey_routing_app
-//
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//
-//class MainActivity : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.ui_main)
-//    }
-//}
-
-
-
 package com.example.journey_routing_app
 
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
-class Main: AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var detailsTextView: TextView
-    private lateinit var detailsNextTextView: TextView
+    private lateinit var journeyTextView: TextView
+    private lateinit var currentStopTextView: TextView
+    private lateinit var nextStopTextView: TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var stopsListView: ListView
     private lateinit var switchUnitsButton: Button
@@ -39,11 +25,12 @@ class Main: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.ui_main)
 
         // Initialize UI components
-        detailsTextView = findViewById(R.id.detailsTxtView)
-        detailsNextTextView = findViewById(R.id.detailsTextView)
+        journeyTextView = findViewById(R.id.journeyTextView)
+        currentStopTextView = findViewById(R.id.currentStopTextView)
+        nextStopTextView = findViewById(R.id.nextStopTextView)
         progressBar = findViewById(R.id.progressBar)
         stopsListView = findViewById(R.id.stopsListView)
         switchUnitsButton = findViewById(R.id.switchUnitsButton)
@@ -88,10 +75,10 @@ class Main: AppCompatActivity() {
         val totalDistanceCoveredText = String.format("%.2f $distanceUnit", totalDistanceCovered)
         val totalDistanceLeftText = String.format("%.2f $distanceUnit", totalDistanceLeft)
 
-        detailsTextView.text = "Current Stop: $currentStop\n" +
+        journeyTextView.text = "Current Stop: $currentStop\n" +
                 "Distance to Next: $distanceToNext $distanceUnit\n" +
                 "Total Distance Covered: $totalDistanceCoveredText"
-        detailsNextTextView.text = "Next Stop: $nextStop\n" +
+        nextStopTextView.text = "Next Stop: $nextStop\n" +
                 "Total Distance Left: $totalDistanceLeftText"
     }
 

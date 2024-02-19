@@ -12,7 +12,7 @@
 
 
     <TextView
-        android:id="@+id/detailsxtView"
+        android:id="@+id/journeyTextView"
         android:layout_width="match_parent"
         android:padding="8dp"
         android:layout_height="200dp"
@@ -62,7 +62,7 @@
         android:weightSum="2">
 
     <TextView
-        android:id="@+id/detailsTxtView"
+        android:id="@+id/currentStopTextView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -71,7 +71,7 @@
         android:text="currentStop"
         android:textSize="18sp" />
     <TextView
-        android:id="@+id/detailsTextView"
+        android:id="@+id/nextStopTextView"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
